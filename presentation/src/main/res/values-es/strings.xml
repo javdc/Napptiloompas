@@ -1,0 +1,75 @@
+<resources>
+
+    <string name="oompa_loompa_list_screen_name">Oompa Loompas</string>
+    <string name="oompa_loompa_details_screen_name">Detalles</string>
+    <string name="about_screen_name">Acerca de</string>
+
+    <string name="action_retry">Reintentar</string>
+    <string name="action_back">Atrás</string>
+    <string name="action_expand_text">Ver más…</string>
+
+    <string name="error_generic">Error</string>
+    <string name="error_generic_with_http_code">Error %d</string>
+    <string name="error_generic_description">Ha ocurrido un error. Espera unos segundos e inténtalo de nuevo.</string>
+
+    <string name="error_connection_error">Error de conexión</string>
+    <string name="error_connection_error_description">Ha ocurrido un error al conectar con el servidor. Comprueba tu conexión o inténtalo más tarde.</string>
+
+    <string name="error_timeout_error">Tiempo de espera agotado</string>
+    <string name="error_timeout_error_description">El servidor ha tardado demasiado en responder. Comprueba tu conexión o inténtalo más tarde.</string>
+
+    <string name="error_empty_response_error">Respuesta vacía</string>
+    <string name="error_empty_response_error_description">La respuesta está vacía cuando no debería estarlo. Inténtalo más tarde.</string>
+
+    <string name="filter_profession">Profesión</string>
+    <string name="filter_gender">Género</string>
+
+    <plurals name="filter_selected_professions">
+        <item quantity="one">%d profesión seleccionada</item>
+        <item quantity="other">%d profesiones seleccionadas</item>
+    </plurals>
+
+    <plurals name="filter_selected_genders">
+        <item quantity="one">%d género seleccionado</item>
+        <item quantity="other">%d géneros seleccionados</item>
+    </plurals>
+
+    <string-array name="professions">
+        <item>Desarrollador</item>
+        <item>Metalúrgico</item>
+        <item>Cortagemas</item>
+        <item>Médico</item>
+        <item>Cervecero</item>
+    </string-array>
+
+    <string-array name="genders">
+        <item>Hombre</item>
+        <item>Mujer</item>
+    </string-array>
+
+    <string name="filter_profession_dialog_title">Profesiones</string>
+    <string name="filter_gender_dialog_title">Géneros</string>
+
+    <plurals name="age_years_old">
+        <item quantity="one">%d año</item>
+        <item quantity="other">%d años</item>
+    </plurals>
+
+    <string name="details_name_format">%1$s %2$s</string>
+    <string name="details_description_title">Descripción</string>
+    <string name="details_favorites_title">Favoritos</string>
+    <string name="details_favorite_color_title">Color</string>
+    <string name="details_favorite_food_title">Comida</string>
+    <string name="details_favorite_song_title">Canción</string>
+    <string name="details_quota_title">Cuota</string>
+    <string name="details_quota_action_see_full_quota">Mostrar cuota completa</string>
+
+    <string name="about_app_version_format">v%s</string>
+    <string name="about_description">Napptiloompas es una aplicación que te ayuda a navegar y consultar los detalles de los Oompa Loompas con facilidad.</string>
+    <string name="about_source_code_title">¡Soy de código abierto!</string>
+    <string name="about_source_code">Puedes consultar el código fuente en https://github.com/javdc/Napptiloompas</string>
+    <string name="about_issues_title">¿Problemas? ¿Sugerencias?</string>
+    <string name="about_issues">Puedes reportar errores o hacer sugerencias en https://github.com/javdc/Napptiloompas/issues</string>
+    <string name="about_made_with_love_footer">Hecho con &#9829; por Javi</string>
+
+</resources>

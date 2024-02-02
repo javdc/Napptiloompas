@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/oompa_loompas_navigation"
+    app:startDestination="@id/oompaLoompasFragment">
+
+    <fragment
+        android:id="@+id/oompaLoompasFragment"
+        android:name="com.javdc.napptiloompas.presentation.ui.list.OompaLoompasFragment"
+        android:label="@string/oompa_loompa_list_screen_name"
+        tools:layout="@layout/fragment_oompa_loompas" >
+
+        <action
+            android:id="@+id/actionOompaLoompasFragmentToOompaLoompaDetailsFragment"
+            app:destination="@id/oompaLoompaDetailsFragment" />
+
+        <action
+            android:id="@+id/actionOompaLoompasFragmentToAboutFragment"
+            app:destination="@id/aboutFragment"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_open_exit"
+            app:popEnterAnim="@anim/fragment_close_enter"
+            app:popExitAnim="@anim/fragment_close_exit"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/oompaLoompaDetailsFragment"
+        android:name="com.javdc.napptiloompas.presentation.ui.details.OompaLoompaDetailsFragment"
+        android:label="@string/oompa_loompa_details_screen_name"
+        tools:layout="@layout/fragment_oompa_loompa_details">
+
+        <argument
+            android:name="id"
+            app:argType="long" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.javdc.napptiloompas.presentation.ui.about.AboutFragment"
+        android:label="@string/about_screen_name"
+        tools:layout="@layout/fragment_about" />
+
+</navigation>

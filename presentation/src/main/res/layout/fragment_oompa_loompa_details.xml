@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="?attr/colorSurface"
+    android:transitionName="@string/oompa_loompa_details_transition_name"
+    tools:context=".ui.details.OompaLoompaDetailsFragment">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/oompaLoompaDetailsToolbar"
+        style="@style/Theme.Napptiloompas.Toolbar.WithNavigationIcon"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:title="@string/oompa_loompa_details_screen_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id="@+id/oompaLoompaDetailsScrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:animateLayoutChanges="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/oompaLoompaDetailsToolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/oompaLoompaDetailsInformationConstraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="24dp"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <ImageView
+                android:id="@+id/oompaLoompaDetailsPhotoImageView"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="24dp"
+                android:importantForAccessibility="no"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/oompaLoompaDetailsNameTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="16dp"
+                android:gravity="center_horizontal"
+                android:textAppearance="@style/TextAppearance.Material3.HeadlineMedium"
+                android:textIsSelectable="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/oompaLoompaDetailsPhotoImageView"
+                app:layout_constraintVertical_chainStyle="packed"
+                tools:text="@tools:sample/full_names" />
+
+            <LinearLayout
+                android:id="@+id/oompaLoompaDetailsAdditionalInfoLinearLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="6dp"
+                android:divider="?dividerHorizontal"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:showDividers="middle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/oompaLoompaDetailsNameTextView"
+                tools:visibility="visible">
+
+                <TextView
+                    android:id="@+id/oompaLoompaDetailsProfessionTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="6dp"
+                    android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                    tools:text="Developer" />
+
+                <TextView
+                    android:id="@+id/oompaLoompaDetailsAgeTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="6dp"
+                    android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                    tools:text="21" />
+
+                <ImageView
+                    android:id="@+id/oompaLoompaDetailsGenderImageView"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginHorizontal="6dp"
+                    app:tint="?android:textColorPrimary"
+                    tools:ignore="ContentDescription"
+                    tools:src="@drawable/ic_gender_male" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/oompaLoompaDetailsEmailTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="6dp"
+                android:autoLink="email"
+                android:gravity="center_horizontal"
+                android:linksClickable="true"
+                android:textIsSelectable="true"
+                android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/oompaLoompaDetailsAdditionalInfoLinearLayout"
+                tools:text="loremipsum@example.org" />
+
+            <TextView
+                android:id="@+id/oompaLoompaDetailsDescriptionTitleTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="24dp"
+                android:text="@string/details_description_title"
+                android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/oompaLoompaDetailsEmailTextView" />
+
+            <TextView
+                android:id="@+id/oompaLoompaDetailsDescriptionTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="8dp"
+                android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                android:textIsSelectable="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/oompaLoompaDetailsDescriptionTitleTextView"
+                tools:text="@tools:sample/lorem[32]" />
+
+            <TextView
+                android:id="@+id/oompaLoompaDetailsFavoritesTitleTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="24dp"
+                android:text="@string/details_favorites_title"
+                android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/oompaLoompaDetailsDescriptionTextView" />
+
+            <TextView
+                android:id="@+id/oompaLoompaDetailsFavoriteColorTitleTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/details_favorite_color_title"
+                android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+                app:layout_constraintEnd_toStartOf="@id/oompaLoompaDetailsFavoriteFoodTitleTextView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/oompaLoompaDetailsFavoritesTitleTextView" />
+
+            <TextView
+                android:id="@+id/oompaLoompaDetailsFavoriteColorTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                app:layout_constraintEnd_toEndOf="@id/oompaLoompaDetailsFavoriteColorTitleTextView"
+                app:layout_constraintStart_toStartOf="@id/oompaLoompaDetailsFavoriteColorTitleTextView"
+                app:layout_constraintTop_toBottomOf="@id/oompaLoompaDetailsFavoriteColorTitleTextView"
+                tools:text="Red" />
+
+            <TextView
+                android:id="@+id/oompaLoompaDetailsFavoriteFoodTitleTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="24dp"
+                android:text="@string/details_favorite_food_title"
+                android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/oompaLoompaDetailsFavoriteColorTitleTextView"
+                app:layout_constraintTop_toBottomOf="@id/oompaLoompaDetailsFavoritesTitleTextView" />
+
+            <TextView
+                android:id="@+id/oompaLoompaDetailsFavoriteFoodTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                app:layout_constraintEnd_toEndOf="@id/oompaLoompaDetailsFavoriteFoodTitleTextView"
+                app:layout_constraintStart_toStartOf="@id/oompaLoompaDetailsFavoriteFoodTitleTextView"
+                app:layout_constraintTop_toBottomOf="@id/oompaLoompaDetailsFavoriteColorTitleTextView"
+                tools:text="Chocolat" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/oompaLoompaDetailsFavoriteColorFoodBarrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="oompaLoompaDetailsFavoriteFoodTextView,oompaLoompaDetailsFavoriteFoodTextView" />
+
+            <TextView
+                android:id="@+id/oompaLoompaDetailsFavoriteSongTitleTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/details_favorite_song_title"
+                android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+                app:layout_constraintEnd_toStartOf="@id/oompaLoompaDetailsFavoriteFoodTitleTextView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/oompaLoompaDetailsFavoriteColorFoodBarrier" />
+
+            <TextView
+                android:id="@+id/oompaLoompaDetailsFavoriteSongTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="8dp"
+                android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                android:maxLines="4"
+                android:ellipsize="end"
+                android:textIsSelectable="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/oompaLoompaDetailsFavoriteSongTitleTextView"
+                tools:text="@tools:sample/lorem[20]" />
+
+            <Button
+                android:id="@+id/oompaLoompaDetailsFavoriteSongExpandButton"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="12dp"
+                android:minHeight="0dp"
+                android:text="@string/action_expand_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/oompaLoompaDetailsFavoriteSongTextView"
+                app:layout_constraintHorizontal_bias="0" />
+
+            <TextView
+                android:id="@+id/oompaLoompaDetailsQuotaTitleTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="24dp"
+                android:text="@string/details_quota_title"
+                android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/oompaLoompaDetailsFavoriteSongExpandButton" />
+
+            <TextView
+                android:id="@+id/oompaLoompaDetailsQuotaTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="8dp"
+                android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                android:textIsSelectable="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/oompaLoompaDetailsQuotaTitleTextView"
+                tools:text="@tools:sample/lorem[20]" />
+
+            <Button
+                android:id="@+id/oompaLoompaDetailsShowQuotaButton"
+                style="@style/Widget.Material3.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginHorizontal="24dp"
+                android:text="@string/details_quota_action_see_full_quota"
+                app:icon="@drawable/ic_text_long"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/oompaLoompaDetailsQuotaTextView"
+                app:layout_constraintHorizontal_bias="0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/oompaLoompaDetailsCircularProgressIndicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/oompaLoompaDetailsToolbar"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <com.javdc.napptiloompas.presentation.ui.common.ErrorView
+        android:id="@+id/oompaLoompaDetailsErrorView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/oompaLoompaDetailsToolbar"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
