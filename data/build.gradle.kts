@@ -57,4 +57,8 @@ dependencies {
     implementation("com.squareup.okhttp3:logging-interceptor:${Versions.okHttpVersion}")
     implementation("com.google.code.gson:gson:${Versions.gsonVersion}")
     implementation("co.touchlab:kermit:${Versions.kermitVersion}")
+
+    testImplementation("junit:junit:${Versions.jUnitVersion}")
+    testImplementation("io.mockk:mockk:${Versions.mockKVersion}")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutinesVersion}")
 }

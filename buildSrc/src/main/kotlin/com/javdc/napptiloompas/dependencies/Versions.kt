@@ -22,4 +22,8 @@ object Versions {
     const val retrofitVersion = "2.9.0"
     const val swipeRefreshLayoutVersion = "1.1.0"
     const val viewBindingVersion = "8.2.2"
+
+    const val mockKVersion = "1.13.7"
+    const val jUnitVersion = "4.13.2"
+    const val androidCoreTestingVersion = "2.2.0"
 }

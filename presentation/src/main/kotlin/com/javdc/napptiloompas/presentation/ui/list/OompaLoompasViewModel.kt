@@ -4,6 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.javdc.napptiloompas.common.di.DefaultDispatcher
+import com.javdc.napptiloompas.common.di.IoDispatcher
 import com.javdc.napptiloompas.presentation.model.GenderEnum
 import com.javdc.napptiloompas.presentation.model.ProfessionEnum
 import com.javdc.napptiloompas.domain.usecase.GetOompaLoompasUseCase
@@ -12,12 +14,14 @@ import com.javdc.napptiloompas.presentation.mapper.toVo
 import com.javdc.napptiloompas.presentation.model.AppliedFiltersVo
 import com.javdc.napptiloompas.presentation.model.OompaLoompaVo
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 class OompaLoompasViewModel @Inject constructor(
+    @IoDispatcher private val iODispatcher: CoroutineDispatcher,
+    @DefaultDispatcher private val defaultDispatcher: CoroutineDispatcher,
     private val getOompaLoompasUseCase: GetOompaLoompasUseCase,
 ) : ViewModel() {
 
@@ -39,7 +43,7 @@ class OompaLoompasViewModel @Inject constructor(
 
     fun fetchOompaLoompas() {
         if (reachedLastPage) return
-        viewModelScope.launch(Dispatchers.IO) {
+        viewModelScope.launch(iODispatcher) {
             getOompaLoompasUseCase(currentPage + 1).collect { result ->
                 when (result) {
                     is AsyncResult.Success -> {
@@ -72,7 +76,7 @@ class OompaLoompasViewModel @Inject constructor(
     }
 
     private fun postFilteredOompaLoompas() {
-        viewModelScope.launch(Dispatchers.IO) {
+        viewModelScope.launch(defaultDispatcher) {
             val professionsFilter = _filtersLiveData.value?.professionsFilter.orEmpty()
             val gendersFilter = _filtersLiveData.value?.gendersFilter.orEmpty()
 
