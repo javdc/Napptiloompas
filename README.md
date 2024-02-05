@@ -51,6 +51,8 @@ And, of course, this project also follows the **MVVM** architectural pattern and
 - **AndroidX Lifecycle** libraries, including **LiveData** and **ViewModel**, useful tools to implement MVVM architecture and help you manage the lifecycle of the screens
 - **Glide**, a lightweight and easy to use library to load and cache remote images.
 - **Navigation Component**, a set of libraries and tools for advanced navigation across screens
+- **Junit 4**, a powerful and well-known library for doing unit tests
+- **MockK**, a Kotlin-first library to mock and verify objects and functions
 - Other well-known libraries like **Android Core KTX** for useful Kotlin extensions or **AppCompat** for better compatibility in older Android versions.
 
 ## Credits

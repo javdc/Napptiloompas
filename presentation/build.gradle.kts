@@ -66,4 +66,9 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-extensions:${Versions.lifecycleExtensionsVersion}")
     implementation("com.github.bumptech.glide:glide:${Versions.glideVersion}")
     implementation("co.touchlab:kermit:${Versions.kermitVersion}")
+
+    testImplementation("junit:junit:${Versions.jUnitVersion}")
+    testImplementation("io.mockk:mockk:${Versions.mockKVersion}")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutinesVersion}")
+    testImplementation("androidx.arch.core:core-testing:${Versions.androidCoreTestingVersion}")
 }
