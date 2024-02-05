@@ -1,6 +1,6 @@
 package com.javdc.napptiloompas.domain.model
 
-class OompaLoompaBo(
+data class OompaLoompaBo(
     val id: Long,
     val firstName: String?,
     val lastName: String?,

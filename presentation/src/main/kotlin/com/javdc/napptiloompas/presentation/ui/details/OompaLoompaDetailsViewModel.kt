@@ -21,10 +21,6 @@ class OompaLoompaDetailsViewModel @Inject constructor(
     val oompaLoompaDetailsLiveData: LiveData<AsyncResult<OompaLoompaBo>>
         get() = _oompaLoompaDetailsLiveData
 
-//    private val _stopFavoriteStatusLiveData = MutableLiveData<Boolean>()
-//    val stopFavoriteStatusLiveData: LiveData<Boolean>
-//        get() = _stopFavoriteStatusLiveData
-
     fun fetchOompaLoompaDetails(id: Long) {
         viewModelScope.launch(Dispatchers.IO) {
             getOompaLoompaDetailsUseCase(id).collect { result ->
@@ -32,25 +28,5 @@ class OompaLoompaDetailsViewModel @Inject constructor(
             }
         }
     }
-
-//    fun observeFavoriteStatusFromLocal(code: Int) {
-//        viewModelScope.launch(Dispatchers.IO) {
-//            isStopFavoriteUseCase(code).collect {
-//                _stopFavoriteStatusLiveData.postValue(it)
-//            }
-//        }
-//    }
-//
-//    fun addStopToFavorites(code: Int) {
-//        viewModelScope.launch(Dispatchers.IO) {
-//            addStopToFavoritesUseCase(code)
-//        }
-//    }
-//
-//    fun removeStopFromFavorites(code: Int) {
-//        viewModelScope.launch(Dispatchers.IO) {
-//            removeStopFromFavoritesUseCase(code)
-//        }
-//    }
 
 }

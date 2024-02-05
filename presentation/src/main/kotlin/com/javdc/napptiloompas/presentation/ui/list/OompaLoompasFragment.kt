@@ -118,7 +118,7 @@ class OompaLoompasFragment : BaseFragment<FragmentOompaLoompasBinding>(FragmentO
     }
 
     private fun observeOompaLoompas() {
-        viewModel.oompasLiveData.observe(viewLifecycleOwner) { result ->
+        viewModel.oompaLoompasLiveData.observe(viewLifecycleOwner) { result ->
             binding?.apply {
                 when (result) {
                     is AsyncResult.Loading -> {
