@@ -23,12 +23,11 @@ class OompaLoompasViewModel @Inject constructor(
 
     private var oompaLoompas = mutableListOf<OompaLoompaVo>()
     private var currentPage = 0
-    var reachedLastPage: Boolean = false
-        private set
+    private var reachedLastPage: Boolean = false
 
-    private val _oompasLiveData = MutableLiveData<AsyncResult<List<OompaLoompaVo>>>()
-    val oompasLiveData: LiveData<AsyncResult<List<OompaLoompaVo>>>
-        get() = _oompasLiveData
+    private val _oompaLoompasLiveData = MutableLiveData<AsyncResult<List<OompaLoompaVo>>>()
+    val oompaLoompasLiveData: LiveData<AsyncResult<List<OompaLoompaVo>>>
+        get() = _oompaLoompasLiveData
 
     private val _filtersLiveData = MutableLiveData(AppliedFiltersVo(emptyList(), emptyList()))
     val filtersLiveData: LiveData<AppliedFiltersVo>
@@ -51,11 +50,11 @@ class OompaLoompasViewModel @Inject constructor(
                     }
 
                     is AsyncResult.Error -> {
-                        _oompasLiveData.postValue(AsyncResult.Error(error = result.error))
+                        _oompaLoompasLiveData.postValue(AsyncResult.Error(error = result.error))
                     }
 
                     is AsyncResult.Loading -> {
-                        _oompasLiveData.postValue(AsyncResult.Loading())
+                        _oompaLoompasLiveData.postValue(AsyncResult.Loading())
                     }
                 }
             }
@@ -80,7 +79,7 @@ class OompaLoompasViewModel @Inject constructor(
             var filteredOompaLoompas = oompaLoompas.toList()
             if (professionsFilter.isNotEmpty()) filteredOompaLoompas = filteredOompaLoompas.filter { professionsFilter.contains(it.profession) }
             if (gendersFilter.isNotEmpty()) filteredOompaLoompas = filteredOompaLoompas.filter { gendersFilter.contains(it.gender) }
-            _oompasLiveData.postValue(AsyncResult.Success(filteredOompaLoompas))
+            _oompaLoompasLiveData.postValue(AsyncResult.Success(filteredOompaLoompas))
         }
     }
 
