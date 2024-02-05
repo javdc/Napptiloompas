@@ -9,7 +9,7 @@ object Versions {
     const val glideVersion = "4.16.0"
     const val gsonVersion = "2.10.1"
     const val hiltNavigationFragmentVersion = "1.1.0"
-    const val hiltVersion = "2.48.1"
+    const val hiltVersion = "2.50"
     const val kermitVersion = "2.0.2"
     const val kotlinVersion = "1.9.22"
     const val kspVersion = "$kotlinVersion-1.0.16"
